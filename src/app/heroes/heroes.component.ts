@@ -13,18 +13,11 @@ import { MessageService } from '../message.service';
 export class HeroesComponent implements OnInit {
 
   heroes: Hero[];
-  selectedHero: Hero;
 
   constructor(private heroService: HeroService, private messageService: MessageService) {
 
   }
 
-  selectHero(hero: Hero): void {
-    this.selectedHero = hero;
-    let selectMessage = 'You You Selected ' + hero.name;
-    this.messageService.add(selectMessage);
-
-  }
 
   getHeroes(): void {
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
