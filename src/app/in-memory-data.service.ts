@@ -1,6 +1,8 @@
-import { Hero } from './hero';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 
-export const HEROES: Hero[] = [
+export class InMemoryDataService implements InMemoryDbService {
+createDb() {
+  const heroes = [
   {id: 11, name: 'Mr. Bad'},
   {id: 12, name: 'Mr. Zeffer'},
   {id: 14, name: 'Mr. Slow'},
@@ -10,4 +12,9 @@ export const HEROES: Hero[] = [
   {id: 19, name: 'Mrs. Bad'},
   {id: 32, name: 'Mr. Nice'},
   {id: 45, name: 'Mr. Good'}
-];
+  ];
+  return heroes;
+}
+
+
+}
